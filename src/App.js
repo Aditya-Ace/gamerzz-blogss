@@ -2,6 +2,8 @@ import Home from './Home';
 import Navbar from './Navbar';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
+import NotFound from './NotFound';
+import Footer from './Footer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -13,14 +15,18 @@ function App() {
           <Route path='/' exact>
             <Home />
           </Route>
-          <Route path='/create' exact>
+          <Route path='/create'>
             <Create />
           </Route>
-          <Route path='/blogs/:id' exact>
+          <Route path='/blogs/:id'>
             <BlogDetails />
+          </Route>
+          <Route path='*'>
+            <NotFound />
           </Route>
         </Switch>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
